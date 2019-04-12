@@ -17,5 +17,4 @@ const SmurfContainer = styled.div `
   grid-area: C;
   display: flex;
   margin: 10px;
-
 `

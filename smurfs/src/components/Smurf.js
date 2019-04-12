@@ -17,7 +17,7 @@ const SmurfItem = styled.div `
   height: 100px;
   padding: 10px;
   text-align: center;
-
+  margin: 10px;
 
   }
 `
