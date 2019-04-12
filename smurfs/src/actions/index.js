@@ -5,7 +5,12 @@ export {
   getData
 } from './getData'
 
-
+export {
+  ADD_SMURF_START,
+  ADD_SMURF_SUCCESS,
+  ADD_SMURF_FAIL,
+  addSmurf
+} from './addSmurf'
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.

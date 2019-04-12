@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-
+import { connect } from 'react-redux'
+import { addSmurf } from '../actions'
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
@@ -16,11 +17,15 @@ class SmurfForm extends Component {
   addSmurf = event => {
     event.preventDefault();
     if (this.state.name && this.state.age && this.state.height) {
-      axios.post('http://localhost:3333/smurfs', {
+      return this.props.addSmurf({
         name: this.state.name,
         age: this.state.age,
         height: this.state.height
-      }).then(res => this.props.updateData(res.data))
+      }).then(this.setState({
+        name: '',
+        age: '',
+        height: ''
+      }))
     } else {
       alert('Please fill in all fields')
     }
@@ -98,4 +103,10 @@ const FormContainer = styled.div `
     }
   }
 `
-export default SmurfForm
+
+const mapStateToProps = ({ isAdding }) => {
+  return {
+    isAdding
+  }
+}
+export default connect(mapStateToProps, { addSmurf })(SmurfForm)
