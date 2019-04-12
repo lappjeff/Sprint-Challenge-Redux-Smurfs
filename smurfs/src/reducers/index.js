@@ -1,9 +1,38 @@
-import { combineReducers } from 'redux'
-import { getDataReducer } from './getDataReducer'
+import {
+  GET_DATA_START,
+  GET_DATA_SUCCESS,
+  GET_DATA_FAIL
 
-export default combineReducers({
-  getDataReducer,
-})
+} from '../actions'
+
+const initialState = {
+  smurfs: [],
+  isFetching: false
+}
+
+const smurfsReducer = (state = initialState, action) => {
+  switch(action.type) {
+    case GET_DATA_START:
+      return {
+        ...state,
+        isFetching: true
+      }
+    case GET_DATA_SUCCESS:
+      return {
+        ...state,
+        smurfs: action.payload,
+        isFetching: false,
+      }
+    case GET_DATA_FAIL:
+      return {
+        ...state,
+        isFetching: false
+      }
+    default: return state
+  }
+}
+
+export default smurfsReducer
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
  {
@@ -14,12 +43,4 @@ export default combineReducers({
    deletingSmurf: false
    error: null
  }
-*/
-
-/*
-  You'll only need one smurf reducer for this project.
-  Feel free to export it as a default and import as rootReducer.
-  This will guard your namespacing issues.
-  There is no need for 'combineReducers' in this project.
-  Components can then read your store as, `state` and not `state.fooReducer`.
 */
