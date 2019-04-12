@@ -1,6 +1,10 @@
-export const GET_DATA_START = 'GET_DATA_START'
-export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS'
-export const GET_DATA_FAIL = 'GET_DATA_FAIL'
+import {
+  GET_DATA_START,
+  GET_DATA_SUCCESS,
+  GET_DATA_FAIL,
+} from './getData'
+
+
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
