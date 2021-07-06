@@ -1,8 +1,16 @@
-/* 
-  Action Types Go Here!
-  Be sure to export each action type so you can pull it into your reducer
-*/
+export {
+  GET_DATA_START,
+  GET_DATA_SUCCESS,
+  GET_DATA_FAIL,
+  getData
+} from './getData'
 
+export {
+  ADD_SMURF_START,
+  ADD_SMURF_SUCCESS,
+  ADD_SMURF_FAIL,
+  addSmurf
+} from './addSmurf'
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
